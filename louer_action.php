@@ -36,7 +36,7 @@ foreach ($select as $row){
         <b class="text-light"> <?= $row['km'] ?> </b> <br>
         <b class="text-light">Année <?= $row['year'] ?></b> <br>
         <button type="button" class="btn btn-success">
-  Prix <span class="badge badge-light"><?= $row['louer'] * $_GET['day'];?></span>
+  Prix <span class="badge badge-light"><?= $row['louer'] * $_GET['day'];?> / <?=  $_GET['day']; ?>jours</span>
   <input type="hidden" name="prix"  value="<?= $row['louer'] * $_GET['day'];?>">
 
   <span class="sr-only">unread messages</span>
