@@ -40,7 +40,7 @@ $select = mysqli_query($conn,"SELECT * FROM cars");
   <center>
 
   <br>
-<form method="get" action="">
+
 <input class="form-control w-25" id="day" type="number" name="day" placeholder="jour?">
 
 
@@ -62,7 +62,7 @@ $select = mysqli_query($conn,"SELECT * FROM cars");
 
         <br>
     
-        
+
       
        
         <button type="submit" class="btn btn-success" name="submit">
@@ -72,37 +72,39 @@ $select = mysqli_query($conn,"SELECT * FROM cars");
  
   <span class="sr-only">unread messages</span>
 
-
+  
 </button>
 <br> <br>
-<button class="btn btn-danger" id="louer">Louer maintenant</button>
-  </form>
+<button type="button" class="btn btn-danger" id="louer" >Louer maintenant</button>
 
-  
-  
-  
+
+
+
+
 </center>
 </div>
 </div>
-<script>
 
 
-$("#louer").click(function(){
-let day = $("#day").val().trim();
-let id = $("#id").val().trim();
-if(day == ""){
-  day = 1;
-}
-var dir = "louer_action.php?id="+id+"&day="+day;
-window.location.href =dir;
-
-})
-</script>
 <?php } ; ?>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+ 
   </div>
 </div>
 </div>
+<script>
+$(document).ready(function(){
+$("#louer").click(function(){
+    var day = $("#day").val().trim();
+    var id = $("#id").val().trim();
 
+    if(day === ""){
+    var day = 1;
+    }
+    var dir = "louer_action.php?id="+id+"&day="+day;
+    window.location.href = dir;
+});
+});
+
+</script>
       
 
